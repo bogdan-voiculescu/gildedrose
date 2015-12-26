@@ -1,3 +1,10 @@
+
+/*
+ * File: GildedRose.cs
+ * --------------------
+ * This file contains the GildedRose class. It takes a list of items and updates the quality.
+ */
+
 using System.Collections.Generic;
 
 namespace GildedRose
