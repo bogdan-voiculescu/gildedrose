@@ -15,80 +15,83 @@ namespace GildedRoseTest
     [TestClass]
     public class AgedBrieTest
     {
+        private const string ITEM_NAME = "Aged Brie";
+
+        private Item inputItem;
+        private Item outputItem;
         
         [TestMethod]
-        public void TestAgedBrieQualityOneUpdate()
+        public void TestUpdateQualityByOne()
         {
-            Item inputItem = new Item()
-            {
-                Name = "Aged Brie",
-                Quality = 10,
-                SellIn = 15
-            };
+            InitInputItem(ITEM_NAME, 10, 15);
+            CreateOutputItem();
 
-            Item outputItem = new Item()
-            {
-                Name = inputItem.Name,
-                Quality = inputItem.Quality + 1,
-                SellIn = inputItem.SellIn - 1
-            };
+            RunUpdateQualityForItem();
 
-            UpdateQualityForItem(inputItem);
-
-            Assert.AreEqual(outputItem.Name, inputItem.Name);
-            Assert.AreEqual(outputItem.Quality, inputItem.Quality);
-            Assert.AreEqual(outputItem.SellIn, inputItem.SellIn);
+            RunAsserts();
         }
 
         [TestMethod]
-        public void TestAgedBrieQualityTwoUpdate()
+        public void TestUpdateQualityByTwo()
         {
-            Item inputItem = new Item()
-            {
-                Name = "Aged Brie",
-                Quality = 10,
-                SellIn = 10
-            };
+            InitInputItem(ITEM_NAME, 10, 10);
+            CreateOutputItem();
 
-            Item outputItem = new Item()
-            {
-                Name = inputItem.Name,
-                Quality = inputItem.Quality + 2,
-                SellIn = inputItem.SellIn - 1
-            };
+            RunUpdateQualityForItem();
 
-            UpdateQualityForItem(inputItem);
-
-            Assert.AreEqual(outputItem.Name, inputItem.Name);
-            Assert.AreEqual(outputItem.Quality, inputItem.Quality);
-            Assert.AreEqual(outputItem.SellIn, inputItem.SellIn);
+            RunAsserts();
         }
 
         [TestMethod]
-        public void TestAgedBrieQualityThreeUpdate()
+        public void TestUpdateQualityByThree()
         {
-            Item inputItem = new Item()
-            {
-                Name = "Aged Brie",
-                Quality = 10,
-                SellIn = 5
-            };
+            InitInputItem(ITEM_NAME, 10, 5);
+            CreateOutputItem();
 
-            Item outputItem = new Item()
-            {
-                Name = inputItem.Name,
-                Quality = inputItem.Quality + 3,
-                SellIn = inputItem.SellIn - 1
-            };
+            RunUpdateQualityForItem();
 
-            UpdateQualityForItem(inputItem);
-
-            Assert.AreEqual(outputItem.Name, inputItem.Name);
-            Assert.AreEqual(outputItem.Quality, inputItem.Quality);
-            Assert.AreEqual(outputItem.SellIn, inputItem.SellIn);
+            RunAsserts();
         }
 
-        private void UpdateQualityForItem(Item inputItem)
+        [TestMethod]
+        public void TestUpdateQualityToNil()
+        {
+            InitInputItem(ITEM_NAME, 10, 0);
+            CreateOutputItem();
+
+            RunUpdateQualityForItem();
+
+            RunAsserts();
+        }
+
+        [TestMethod]
+        public void TestUpdateMaxQuality()
+        {
+            InitInputItem(ITEM_NAME, 50, 15);
+            CreateOutputItem();
+
+            RunUpdateQualityForItem();
+
+            RunAsserts();
+        }
+
+        private void InitInputItem(string Name, int Quality, int SellIn)
+        {
+            inputItem = new Item()
+            {
+                Name = Name,
+                Quality = Quality,
+                SellIn = SellIn
+            };
+        }
+
+        private void CreateOutputItem()
+        {
+            OutputItemBuilder outputItemBuilder = new OutputItemBuilder(inputItem);
+            outputItem = outputItemBuilder.Item;
+        }
+
+        private void RunUpdateQualityForItem()
         {
             IList<Item> itemList = new List<Item>();
             itemList.Add(inputItem);
@@ -97,25 +100,8 @@ namespace GildedRoseTest
             gildedRose.UpdateQuality();
         }
 
-        [TestMethod]
-        public void TestAgedBrieQualityNoneUpdate()
+        private void RunAsserts()
         {
-            Item inputItem = new Item()
-            {
-                Name = "Aged Brie",
-                Quality = 10,
-                SellIn = 0
-            };
-
-            Item outputItem = new Item()
-            {
-                Name = inputItem.Name,
-                Quality = 0,
-                SellIn = -1
-            };
-
-            UpdateQualityForItem(inputItem);
-
             Assert.AreEqual(outputItem.Name, inputItem.Name);
             Assert.AreEqual(outputItem.Quality, inputItem.Quality);
             Assert.AreEqual(outputItem.SellIn, inputItem.SellIn);
