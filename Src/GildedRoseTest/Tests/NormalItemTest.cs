@@ -45,7 +45,7 @@ namespace GildedRoseTest
         }
 
         [TestMethod]
-        public void TestQualityDropsToZero()
+        public void TestAcceleratedDegradeQualityInOneDay()
         {
             InitInputItem(ITEM_NAME, 10, 0);
             CreateOutputItem();

@@ -25,12 +25,21 @@ namespace GildedRoseTest
 
         private void BuildOutputItem(Item InputItem)
         {
+            int newSellIn = InputItem.SellIn - 1;
             OutputItem = new Item()
             {
                 Name = InputItem.Name,
-                SellIn = InputItem.SellIn - 1,
-                Quality = (((InputItem.SellIn - 1) < 0) || (InputItem.Quality < 1)) ? 0 : (InputItem.Quality - 1)
+                SellIn = newSellIn,
+                Quality = RecalculateQualityBasedOn(newSellIn, InputItem.Quality)
             };
+        }
+
+        private int RecalculateQualityBasedOn(int NewSellIn, int InputQuality)
+        {
+            int qualityDegradeValue = (NewSellIn < 0) ? 2 : 1;
+            int quality = (InputQuality < qualityDegradeValue) ? InputQuality : (InputQuality - qualityDegradeValue);
+
+            return quality;
         }
 
         public Item Item
