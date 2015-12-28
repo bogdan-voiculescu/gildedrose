@@ -26,10 +26,14 @@ namespace GildedRose
 				{
 					if (Items[i].Quality > 0)
 					{
-						if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-						{
-							Items[i].Quality = Items[i].Quality - 1;
-						}
+                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                        {
+                            Items[i].Quality = Items[i].Quality - 1;
+                        }
+                        else
+                        {
+                            Items[i].Quality = 80;
+                        }
 					}
 				}
 				else
