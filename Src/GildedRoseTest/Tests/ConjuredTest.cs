@@ -33,6 +33,17 @@ namespace GildedRoseTest
             RunAsserts();
         }
 
+        [TestMethod]
+        public void TestAcceleratedDegradeQualityInOneDay()
+        {
+            InitInputItem(ITEM_NAME, 10, 0);
+            CreateOutputItem();
+
+            RunUpdateQualityForItem();
+
+            RunAsserts();
+        }
+
         private void InitInputItem(string Name, int Quality, int SellIn)
         {
             inputItem = new Item()

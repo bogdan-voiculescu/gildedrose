@@ -29,7 +29,7 @@ namespace GildedRoseTest
             OutputItem = new Item()
             {
                 Name = InputItem.Name,
-                Quality = InputItem.Quality - 2,
+                Quality = (InputItem.SellIn < 1) ? (InputItem.Quality - 4) : (InputItem.Quality - 2),
                 SellIn = InputItem.SellIn - 1
             };
         }
