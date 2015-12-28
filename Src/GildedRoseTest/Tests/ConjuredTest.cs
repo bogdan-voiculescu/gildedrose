@@ -1,8 +1,8 @@
 ﻿
 /*
- * File: SulfurasTest.cs
+ * File: ConjuredTest.cs
  * ----------------------
- * This file contains the unit tests for sulfuras.
+ * This file contains the unit tests for conjured items.
  */
 
 using System;
@@ -15,50 +15,17 @@ using GildedRose;
 namespace GildedRoseTest
 {
     [TestClass]
-    public class SulfurasTest
+    public class ConjuredTest
     {
-        private const string ITEM_NAME = "Sulfuras, Hand of Ragnaros";
+        private const string ITEM_NAME = "Conjured";
 
         private Item inputItem;
         private Item outputItem;
 
         [TestMethod]
-        public void TestSameQualityMoreThanTenDays()
+        public void TestDegradeQualityInOneDay()
         {
             InitInputItem(ITEM_NAME, 10, 15);
-            CreateOutputItem();
-
-            RunUpdateQualityForItem();
-
-            RunAsserts();
-        }
-
-        [TestMethod]
-        public void TestSameQualityLastTenDays()
-        {
-            InitInputItem(ITEM_NAME, 10, 10);
-            CreateOutputItem();
-
-            RunUpdateQualityForItem();
-
-            RunAsserts();
-        }
-
-        [TestMethod]
-        public void TestSameQualityLastFiveDays()
-        {
-            InitInputItem(ITEM_NAME, 10, 5);
-            CreateOutputItem();
-
-            RunUpdateQualityForItem();
-
-            RunAsserts();
-        }
-
-        [TestMethod]
-        public void TestSameQualityNegativeSellIn()
-        {
-            InitInputItem(ITEM_NAME, 10, -1);
             CreateOutputItem();
 
             RunUpdateQualityForItem();
@@ -78,7 +45,7 @@ namespace GildedRoseTest
 
         private void CreateOutputItem()
         {
-            SulfurasOutputItemBuilder outputItemBuilder = new SulfurasOutputItemBuilder(inputItem);
+            ConjuredOutputItemBuilder outputItemBuilder = new ConjuredOutputItemBuilder(inputItem);
             outputItem = outputItemBuilder.Item;
         }
 

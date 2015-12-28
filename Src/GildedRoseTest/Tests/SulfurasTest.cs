@@ -1,8 +1,8 @@
 ﻿
 /*
- * File: BackstageConcertPassTest.cs
- * ----------------------------------
- * This file contains the unit tests for backstage passes to a TAFKAL80ETC concert.
+ * File: SulfurasTest.cs
+ * ----------------------
+ * This file contains the unit tests for sulfuras items.
  */
 
 using System;
@@ -15,15 +15,15 @@ using GildedRose;
 namespace GildedRoseTest
 {
     [TestClass]
-    public class BackstageConcertPassTest
+    public class SulfurasTest
     {
-        private const string ITEM_NAME = "Backstage passes to a TAFKAL80ETC concert";
+        private const string ITEM_NAME = "Sulfuras, Hand of Ragnaros";
 
         private Item inputItem;
         private Item outputItem;
 
         [TestMethod]
-        public void TestUpdateQualityByOne()
+        public void TestSameQualityMoreThanTenDays()
         {
             InitInputItem(ITEM_NAME, 10, 15);
             CreateOutputItem();
@@ -34,7 +34,7 @@ namespace GildedRoseTest
         }
 
         [TestMethod]
-        public void TestUpdateQualityByTwo()
+        public void TestSameQualityLastTenDays()
         {
             InitInputItem(ITEM_NAME, 10, 10);
             CreateOutputItem();
@@ -45,7 +45,7 @@ namespace GildedRoseTest
         }
 
         [TestMethod]
-        public void TestUpdateQualityByThree()
+        public void TestSameQualityLastFiveDays()
         {
             InitInputItem(ITEM_NAME, 10, 5);
             CreateOutputItem();
@@ -56,20 +56,9 @@ namespace GildedRoseTest
         }
 
         [TestMethod]
-        public void TestUpdateQualityToNil()
+        public void TestSameQualityNegativeSellIn()
         {
-            InitInputItem(ITEM_NAME, 10, 0);
-            CreateOutputItem();
-
-            RunUpdateQualityForItem();
-
-            RunAsserts();
-        }
-
-        [TestMethod]
-        public void TestUpdateMaxQuality()
-        {
-            InitInputItem(ITEM_NAME, 50, 15);
+            InitInputItem(ITEM_NAME, 10, -1);
             CreateOutputItem();
 
             RunUpdateQualityForItem();
@@ -89,7 +78,7 @@ namespace GildedRoseTest
 
         private void CreateOutputItem()
         {
-            BackstageConcertPassOutputItemBuilder outputItemBuilder = new BackstageConcertPassOutputItemBuilder(inputItem);
+            SulfurasOutputItemBuilder outputItemBuilder = new SulfurasOutputItemBuilder(inputItem);
             outputItem = outputItemBuilder.Item;
         }
 

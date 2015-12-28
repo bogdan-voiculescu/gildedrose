@@ -45,13 +45,17 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgedBrieTest.cs" />
-    <Compile Include="BackstageConcertPassOutputItemBuilder.cs" />
-    <Compile Include="BackstageConcertPassTest.cs" />
-    <Compile Include="AgedBrieOutputItemBuilder.cs" />
-    <Compile Include="SulfurasOutputItemBuilder.cs" />
+    <Compile Include="Tests\AgedBrieTest.cs" />
+    <Compile Include="Builders\BackstageConcertPassOutputItemBuilder.cs" />
+    <Compile Include="Tests\BackstageConcertPassTest.cs" />
+    <Compile Include="Builders\AgedBrieOutputItemBuilder.cs" />
+    <Compile Include="Builders\ConjuredOutputItemBuilder.cs" />
+    <Compile Include="Tests\ConjuredTest.cs" />
+    <Compile Include="Tests\NormalItemTest.cs" />
+    <Compile Include="Builders\NormalOutputItemBuilder.cs" />
+    <Compile Include="Builders\SulfurasOutputItemBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SulfurasTest.cs" />
+    <Compile Include="Tests\SulfurasTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GildedRose\GildedRose.csproj">
