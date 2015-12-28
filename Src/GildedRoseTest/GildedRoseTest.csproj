@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgedBrieTest.cs" />
-    <Compile Include="OutputItemBuilder.cs" />
+    <Compile Include="BackstageConcertPassOutputItemBuilder.cs" />
+    <Compile Include="BackstageConcertPassTest.cs" />
+    <Compile Include="AgedBrieOutputItemBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

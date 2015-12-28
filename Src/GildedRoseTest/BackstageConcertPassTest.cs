@@ -1,25 +1,27 @@
 ﻿
 /*
- * File: AgedBrieTest.cs
- * ------------------------
- * This file contains the unit tests for an Aged Brie.
+ * File: BackstageConcertPassTest.cs
+ * ----------------------------------
+ * This file contains the unit tests for backstage passes to a TAFKAL80ETC concert.
  */
 
 using System;
+using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GildedRose;
 
 namespace GildedRoseTest
 {
     [TestClass]
-    public class AgedBrieTest
+    public class BackstageConcertPassTest
     {
-        private const string ITEM_NAME = "Aged Brie";
+        private const string ITEM_NAME = "Backstage passes to a TAFKAL80ETC concert";
 
         private Item inputItem;
         private Item outputItem;
-        
+
         [TestMethod]
         public void TestUpdateQualityByOne()
         {
@@ -87,7 +89,7 @@ namespace GildedRoseTest
 
         private void CreateOutputItem()
         {
-            AgedBrieOutputItemBuilder outputItemBuilder = new AgedBrieOutputItemBuilder(inputItem);
+            BackstageConcertPassOutputItemBuilder outputItemBuilder = new BackstageConcertPassOutputItemBuilder(inputItem);
             outputItem = outputItemBuilder.Item;
         }
 

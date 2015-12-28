@@ -1,8 +1,8 @@
 ﻿
 /*
- * File: OutputItemBuilder.cs
- * ---------------------------
- * This file contains the builder definition for an output item used in tests.
+ * File: BackstageConcertPassOutputItemBuilder.cs
+ * -----------------------------------------------
+ * This file contains the builder definition for a backstage concert pass output item used in unit tests.
  */
 
 using System;
@@ -13,11 +13,11 @@ using GildedRose;
 
 namespace GildedRoseTest
 {
-    public class OutputItemBuilder
+    public class BackstageConcertPassOutputItemBuilder
     {
         private Item OutputItem;
 
-        public OutputItemBuilder(Item InputItem)
+        public BackstageConcertPassOutputItemBuilder(Item InputItem)
         {
             BuildOutputItem(InputItem);
         }
