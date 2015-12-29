@@ -1,8 +1,8 @@
 ﻿
 /*
  * File: AgedBrieTest.cs
- * ------------------------
- * This file contains the unit tests for an Aged Brie items.
+ * ----------------------
+ * This file contains unit tests for an Aged Brie item.
  */
 
 using System;

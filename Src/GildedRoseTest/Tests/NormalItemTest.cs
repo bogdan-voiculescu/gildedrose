@@ -2,7 +2,7 @@
 /*
  * File: NormalItemTest.cs
  * ------------------------
- * This file contains the unit tests for normal items.
+ * This file contains unit tests for normal items.
  */
 
 using System;

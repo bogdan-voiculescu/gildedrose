@@ -2,7 +2,7 @@
 /*
  * File: BackstageConcertPassTest.cs
  * ----------------------------------
- * This file contains the unit tests for backstage passes to a TAFKAL80ETC concert items.
+ * This file contains unit tests for backstage passes to a TAFKAL80ETC concert items.
  */
 
 using System;

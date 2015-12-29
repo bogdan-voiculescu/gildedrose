@@ -2,7 +2,7 @@
 /*
  * File: SulfurasTest.cs
  * ----------------------
- * This file contains the unit tests for sulfuras items.
+ * This file contains unit tests for sulfuras items.
  */
 
 using System;

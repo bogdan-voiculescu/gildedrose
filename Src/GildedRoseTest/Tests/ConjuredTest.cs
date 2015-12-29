@@ -2,7 +2,7 @@
 /*
  * File: ConjuredTest.cs
  * ----------------------
- * This file contains the unit tests for conjured items.
+ * This file contains unit tests for conjured items.
  */
 
 using System;
