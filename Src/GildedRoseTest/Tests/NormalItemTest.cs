@@ -28,7 +28,7 @@ namespace GildedRoseTest
             InitInputItem(ITEM_NAME, 10, 15);
             CreateOutputItem();
 
-            RunUpdateQualityForItem();
+            UpdateInputItem();
 
             RunAsserts();
         }
@@ -39,7 +39,7 @@ namespace GildedRoseTest
             InitInputItem(ITEM_NAME, 0, 10);
             CreateOutputItem();
 
-            RunUpdateQualityForItem();
+            UpdateInputItem();
 
             RunAsserts();
         }
@@ -50,7 +50,7 @@ namespace GildedRoseTest
             InitInputItem(ITEM_NAME, 10, 0);
             CreateOutputItem();
 
-            RunUpdateQualityForItem();
+            UpdateInputItem();
 
             RunAsserts();
         }
@@ -71,14 +71,11 @@ namespace GildedRoseTest
             outputItem = outputItemBuilder.Item;
         }
 
-        private void RunUpdateQualityForItem()
+        private void UpdateInputItem()
         {
             GildedRoseItemImpl gildedRoseItem = new GildedRoseItemImpl(inputItem);
-            GildedRoseList gildedRoseList = new GildedRoseList();
-            gildedRoseList.AddItem(gildedRoseItem);
-
-            GildedRose.GildedRoseInn gildedRose = new GildedRose.GildedRoseInn(gildedRoseList);
-            gildedRose.UpdateItems();
+            NormalItemUpdater normalItemUpdater = new NormalItemUpdater(gildedRoseItem);
+            normalItemUpdater.Update();
 
             inputItem = gildedRoseItem.Value;
         }

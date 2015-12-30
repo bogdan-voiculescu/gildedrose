@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GildedRoseItem.cs" />
+    <Compile Include="GildedRose\GildedRoseItem.cs" />
     <Compile Include="GildedRose\ConjuredItemUpdater.cs" />
     <Compile Include="GildedRose\BackstageConcertPassItemUpdater.cs" />
     <Compile Include="GildedRose\GildedRoseListUpdaterImpl.cs" />
