@@ -84,11 +84,14 @@ namespace GildedRoseTest
 
         private void RunUpdateQualityForItem()
         {
-            IList<Item> itemList = new List<Item>();
-            itemList.Add(inputItem);
+            GildedRoseItemImpl gildedRoseItem = new GildedRoseItemImpl(inputItem);
+            GildedRoseList gildedRoseList = new GildedRoseList();
+            gildedRoseList.AddItem(gildedRoseItem);
 
-            GildedRose.GildedRose gildedRose = new GildedRose.GildedRose(itemList);
-            gildedRose.UpdateQuality();
+            GildedRose.GildedRoseInn gildedRose = new GildedRose.GildedRoseInn(gildedRoseList);
+            gildedRose.UpdateItems();
+
+            inputItem = gildedRoseItem.Value;
         }
 
         private void RunAsserts()

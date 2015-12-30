@@ -43,10 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GildedRose.cs" />
+    <Compile Include="GildedRoseItem.cs" />
+    <Compile Include="GildedRose\ConjuredItemUpdater.cs" />
+    <Compile Include="GildedRose\BackstageConcertPassItemUpdater.cs" />
+    <Compile Include="GildedRose\GildedRoseListUpdaterImpl.cs" />
+    <Compile Include="GildedRose\GildedRoseItemUpdaterFactory.cs" />
+    <Compile Include="GildedRose\AgedBrieItemUpdater.cs" />
+    <Compile Include="GildedRoseInn.cs" />
+    <Compile Include="GildedRose\GildedRoseItemUpdater.cs" />
+    <Compile Include="GildedRose\GildedRoseList.cs" />
+    <Compile Include="GildedRose\GildedRoseItemImpl.cs" />
+    <Compile Include="GildedRose\GildedRoseListUpdater.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="GildedRose\NormalItemUpdater.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GildedRose\SulfurasItemUpdater.cs" />
+    <Compile Include="GildedRose\StubItemUpdater.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

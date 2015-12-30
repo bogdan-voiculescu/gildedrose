@@ -45,6 +45,12 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GildedRose\GildedRoseItemUpdaterTest.cs" />
+    <Compile Include="GildedRose\GildedRoseListTest.cs" />
+    <Compile Include="GildedRose\GildedRoseItemTest.cs" />
+    <Compile Include="GildedRose\GildedRoseTest.cs" />
+    <Compile Include="GildedRose\GildedRoseListUpdaterTest.cs" />
+    <Compile Include="GildedRose\GildedRoseItemUpdaterFactoryTest.cs" />
     <Compile Include="Tests\AgedBrieTest.cs" />
     <Compile Include="Builders\BackstageConcertPassOutputItemBuilder.cs" />
     <Compile Include="Tests\BackstageConcertPassTest.cs" />
